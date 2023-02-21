@@ -83,9 +83,22 @@ class _FlMlKitScanningPageState extends State<FlMlKitScanningPage>
                   child: const Text('Camera not initialized',
                       style: TextStyle(color: Colors.blueAccent))),
               onDataChanged: (AnalysisImageModel data) {
+                print("log here i am");
+                print("log data found $data");
+                print("log data datatype " + data.runtimeType.toString());
+
                 final List<Barcode>? barcodes = data.barcodes;
                 if (barcodes != null && barcodes.isNotEmpty) {
                   model = data;
+                  print("log barcodes found " + barcodes.toString());
+
+                  //print all entries in the list
+                  for (var i = 0; i < barcodes.length; i++) {
+                    print(
+                        "log barcodes found in list " + barcodes[i].toString());
+                  }
+                  // print("log barcodes what to do " + barcodes.toString());
+
                   animationController.reset();
                 }
               }),
@@ -284,9 +297,9 @@ class _LinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()
-      ..color = Colors.red
+      ..color = Colors.yellow
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 2;
+      ..strokeWidth = 5;
     final Path path = Path();
     final double left = (rect.left) / getDevicePixelRatio;
     final double top = (rect.top) / getDevicePixelRatio;

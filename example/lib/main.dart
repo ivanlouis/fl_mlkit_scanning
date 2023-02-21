@@ -50,6 +50,7 @@ class _AppState extends State<_App> {
     if (isAndroid) hasPermission = await getPermission(Permission.camera);
     if (isIOS) hasPermission = true;
     if (hasPermission) {
+      print("log has permission");
       final List<Barcode>? data = await push(const FlMlKitScanningPage());
       if (data != null) {
         list = data;

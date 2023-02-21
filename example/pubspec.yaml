@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_curiosity: ^4.2.1
-  flutter_waya: ^4.0.0
+  flutter_waya: ^5.0.0+1
   permission_handler: ^10.2.0
   camera: ^0.10.3
 
